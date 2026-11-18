@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Europa Stars Group - Хоккейное агентство и спортивная академия в Братиславе</title>
+  <meta name="description" content="Объединенный портал агентства Europa Stars Group s.r.o. и Спортивной академии в Братиславе: контракты в Европе и США, школа UNHS, ВНЖ и Boost Hockey">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='6' fill='%230D1B2E'/%3E%3Cpath d='M14 5L16.4 10.6L22.4 11.3L17.9 15.2L19.1 21L14 18.1L8.9 21L10.1 15.2L5.6 11.3L11.6 10.6L14 5Z' fill='%23C81E2B'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner container">
+      <a href="#section-hero" class="brand-link">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <path d="M14 2L24 6.2V13.8C24 19.6 19.7 24.4 14 26C8.3 24.4 4 19.6 4 13.8V6.2L14 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M14 7.5L15.8 11.4L20 12L16.9 14.9L17.7 19.1L14 17.1L10.3 19.1L11.1 14.9L8 12L12.2 11.4L14 7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">Europa Stars Group</span>
+          <span class="brand-sub" data-i18n="brand_sub">Братислава, Словакия</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Основная навигация">
+        <div class="nav-dropdown">
+          <button type="button" class="nav-trigger" id="menuAgencyBtn" aria-expanded="false" aria-controls="megaAgency">
+            <span data-i18n="nav_agency">Агентство игроков</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="mega-panel" id="megaAgency" hidden>
+            <a href="#section-leagues" class="mega-link">
+              <span class="mega-title">Хоккейные лиги Европы и США</span>
+              <span class="mega-desc">USHL, NAHL, NCAA, Extraliga</span>
+            </a>
+            <a href="#section-agency" class="mega-link">
+              <span class="mega-title">Сопровождение контрактов и ВНЖ</span>
+              <span class="mega-desc">Юридическая защита, визы, страховка</span>
+            </a>
+            <a href="#section-team" class="mega-link">
+              <span class="mega-title">Аккредитованные агенты</span>
+              <span class="mega-desc">Чехия, Словакия, Швеция</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <button type="button" class="nav-trigger" id="menuAcademyBtn" aria-expanded="false" aria-controls="megaAcademy">
+            <span data-i18n="nav_academy">Академия в Братиславе</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="mega-panel" id="megaAcademy" hidden>
+            <a href="#section-academy" class="mega-link">
+              <span class="mega-title">Хоккей и футбол от 10 лет</span>
+              <span class="mega-desc">HC Slovan, HC HOBA, HC Ružinov-99</span>
+            </a>
+            <a href="#section-academy" class="mega-link" data-acad-jump="education">
+              <span class="mega-title">Школа UNHS США и кампус</span>
+              <span class="mega-desc">Диплом США и Европы, проживание, питание</span>
+            </a>
+            <a href="#section-academy" class="mega-link" data-acad-jump="boost">
+              <span class="mega-title">Онлайн-тренировки Boost Hockey</span>
+              <span class="mega-desc">Индивидуальная техника и разбор игр</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="#section-leagues" class="nav-link" data-i18n="nav_leagues">Лиги</a>
+        <a href="#section-team" class="nav-link" data-i18n="nav_team">Команда</a>
+        <a href="#section-wp" class="nav-link" data-i18n="nav_wp">Архитектура WordPress</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Язык">
+          <button type="button" class="lang-btn is-active" data-lang="ru">RU</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button type="button" class="btn-primary" id="openApplyBtn" data-i18n="cta_apply">Анкета игрока</button>
+        <button type="button" class="burger-btn" id="burgerBtn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Меню">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-drawer" id="mobileDrawer" hidden>
+      <nav class="mobile-nav" aria-label="Мобильная навигация">
+        <a href="#section-leagues" class="mobile-link">Хоккейные лиги Европы и США</a>
+        <a href="#section-agency" class="mobile-link">Сопровождение контрактов и ВНЖ</a>
+        <a href="#section-academy" class="mobile-link">Академия в Братиславе</a>
+        <a href="#section-team" class="mobile-link">Команда и аккредитации</a>
+        <a href="#section-wp" class="mobile-link">Архитектура WordPress</a>
+      </nav>
+      <button type="button" class="btn-primary btn-full" id="mobileApplyBtn">Анкета игрока</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section" id="section-hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="hero-title" data-i18n="hero_title">Карьера хоккеиста и спортивная академия в Европе и США</h1>
+          <p class="hero-lead" data-i18n="hero_lead">Объединенный портал агентства Europa Stars Group s.r.o. и Академии в Братиславе: контракты от U16 до взрослых лиг, обучение с аттестатом США UNHS и полное оформление ВНЖ</p>
+          <div class="hero-actions">
+            <button type="button" class="btn-primary" id="heroApplyBtn" data-i18n="cta_submit_profile">Отправить анкету игрока</button>
+            <a href="#section-leagues" class="btn-secondary" id="heroExploreBtn" data-i18n="cta_explore">Выбрать лигу или академию</a>
+          </div>
+          <div class="metrics-strip">
+            <div class="metric-item">
+              <span class="metric-num">2011</span>
+              <span class="metric-label">Основание в Праге</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-num">6 стран</span>
+              <span class="metric-label">Словакия, Чехия, Швеция, Финляндия, Швейцария, США</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-num">U10-SR</span>
+              <span class="metric-label">Возраст от академии до профи</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-num">3 союза</span>
+              <span class="metric-label">Аккредитации ЧХС, Словакии и Швеции</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-showcase">
+          <div class="track-tabs" role="tablist" aria-label="Направления портала">
+            <button type="button" class="track-tab is-active" data-track="agency" role="tab" aria-selected="true" data-i18n="tab_agency">Агентство (europa-stars.eu)</button>
+            <button type="button" class="track-tab" data-track="academy" role="tab" aria-selected="false" data-i18n="tab_academy">Академия (academy.europa-stars.eu)</button>
+          </div>
+          <div class="track-card" id="trackPreviewCard">
+            <div class="track-card-head">
+              <span class="track-badge">Трек агентства</span>
+              <span class="track-meta">U16 - SR</span>
+            </div>
+            <h2 class="track-card-title">Трудоустройство в лигах Европы и Северной Америки</h2>
+            <p class="track-card-desc">Прямые просмотры, подписание контрактов, стипендии NCAA и юридическое сопровождение игроков и их семей</p>
+            <div class="rink-diagram" aria-hidden="true">
+              <svg viewBox="0 0 360 120" width="100%" height="120" fill="none">
+                <rect x="4" y="4" width="352" height="112" rx="28" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
+                <line x1="180" y1="4" x2="180" y2="116" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.5"/>
+                <line x1="120" y1="4" x2="120" y2="116" stroke="currentColor" stroke-width="1.2" opacity="0.25"/>
+                <line x1="240" y1="4" x2="240" y2="116" stroke="currentColor" stroke-width="1.2" opacity="0.25"/>
+                <circle cx="180" cy="60" r="22" stroke="currentColor" stroke-width="1.4" opacity="0.45"/>
+                <circle cx="180" cy="60" r="3" fill="currentColor"/>
+                <circle cx="72" cy="34" r="14" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
+                <circle cx="72" cy="86" r="14" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
+                <circle cx="288" cy="34" r="14" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
+                <circle cx="288" cy="86" r="14" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
+              </svg>
+            </div>
+            <button type="button" class="btn-secondary" id="trackActionBtn">Подать заявку в агентство</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="section-leagues">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="leagues_title">География лиг и клубов трудоустройства</h2>
+          <p class="section-sub" data-i18n="leagues_sub">Фильтр по странам и возрасту игрока: от юниорских лиг Словакии и Чехии до USHL и студенческого хоккея NCAA</p>
+        </div>
+
+        <div class="filter-toolbar">
+          <div class="filter-chips" id="leagueFilterBar">
+            <button type="button" class="filter-chip is-active" data-region="all">Все страны</button>
+            <button type="button" class="filter-chip" data-region="usa">США и NCAA</button>
+            <button type="button" class="filter-chip" data-region="sk">Словакия</button>
+            <button type="button" class="filter-chip" data-region="cz">Чехия</button>
+            <button type="button" class="filter-chip" data-region="nordic">Швеция, Финляндия, Швейцария</button>
+          </div>
+          <label class="age-filter-wrap">
+            <span data-i18n="age_label">Возраст:</span>
+            <select id="ageGroupSelect" class="select-control">
+              <option value="all">Все категории</option>
+              <option value="u16">U16 / U18 Юниоры</option>
+              <option value="u20">U20 Молодежные</option>
+              <option value="college">NCAA / Студенческие</option>
+              <option value="sr">SR Взрослые профи</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="leagues-grid" id="leaguesGrid"></div>
+
+        <div class="empty-state" id="leaguesEmpty" hidden>
+          <p>По выбранным параметрам лиги не найдены. Попробуйте изменить регион или возрастную категорию.</p>
+          <button type="button" class="btn-secondary" id="resetFiltersBtn">Сбросить фильтры</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block section-tinted" id="section-agency">
+      <div class="container agency-split">
+        <div class="agency-intro">
+          <h2 class="section-title">Комплексное сопровождение карьеры</h2>
+          <p class="section-sub">Берем на себя спортивные переговоры, визовую логистику и правовую защиту игрока на каждом этапе перехода между лигами.</p>
+        </div>
+
+        <div class="service-rows">
+          <div class="service-row">
+            <div class="service-row-title">Контракты и просмотры в клубах Европы</div>
+            <div class="service-row-desc">Организация просмотровых сборов, согласование условий контрактов и переходов в лигах Словакии, Чехии, Швеции, Финляндии и Швейцарии.</div>
+          </div>
+          <div class="service-row">
+            <div class="service-row-title">Студенческие стипендии NCAA и USHL/NAHL</div>
+            <div class="service-row-desc">Подготовка спортивного резюме, коммуникация с тренерами колледжей и юниорских лиг США, сопровождение поступления.</div>
+          </div>
+          <div class="service-row">
+            <div class="service-row-title">Оформление ВНЖ и ПМЖ Словакии и Чехии</div>
+            <div class="service-row-desc">Полный цикл легализации игрока и сопровождающих родителей: нострификация документов, регистрация в полиции и продление статуса.</div>
+          </div>
+          <div class="service-row">
+            <div class="service-row-title">Спортивное страхование и юридическая защита</div>
+            <div class="service-row-desc">Оформление специализированных страховых полисов для контактного спорта и проверка контрактных обязательств клубов.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="section-academy">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="academy_title">Спортивная академия Europa Stars в Братиславе</h2>
+          <p class="section-sub" data-i18n="academy_sub">Хоккейное и футбольное отделения для спортсменов с 10 лет с полным средним образованием</p>
+        </div>
+
+        <div class="academy-layout">
+          <div class="acad-nav" role="tablist" aria-label="Отделения академии">
+            <button type="button" class="acad-tab is-active" data-acad="hockey" role="tab" aria-selected="true">Хоккей: HC Slovan, HC HOBA, Ružinov-99</button>
+            <button type="button" class="acad-tab" data-acad="football" role="tab" aria-selected="false">Футбольное отделение и ОФП</button>
+            <button type="button" class="acad-tab" data-acad="education" role="tab" aria-selected="false">Школа UNHS (США), проживание и питание</button>
+            <button type="button" class="acad-tab" data-acad="boost" role="tab" aria-selected="false">Онлайн-платформа Boost Hockey</button>
+          </div>
+
+          <div class="acad-pane" id="acadDetailPane">
+            <h3 class="acad-pane-title">Хоккейное отделение в партнерстве с клубами Братиславы</h3>
+            <p class="acad-pane-desc">Ежедневные ледовые тренировки и участие в официальных чемпионатах Словакии в составе партнерских клубов HC Slovan Bratislava, HC HOBA и HC Ružinov-99.</p>
+            <ul class="acad-list">
+              <li>Индивидуальная работа над катанием, броском и тактикой игры</li>
+              <li>Занятия ОФП и восстановительные программы под контролем тренеров</li>
+              <li>Подготовка к переходу в юниорские лиги Чехии, Скандинавии и США</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block section-tinted" id="section-team">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="team_title">Руководство и официальные аккредитации</h2>
+        </div>
+
+        <div class="team-grid">
+          <article class="team-card">
+            <h3 class="team-name">Александр Самадов</h3>
+            <p class="team-role">Основатель агентства</p>
+            <p class="team-bio">Аккредитованный хоккейный агент в Чехии и Словакии, выпускник МФЮА и курсов Hockey GM &amp; Scouting.</p>
+          </article>
+          <article class="team-card">
+            <h3 class="team-name">Ярослав Самадов</h3>
+            <p class="team-role">Исполнительный директор</p>
+            <p class="team-bio">Опыт игры в HC Slovan Bratislava, HC Pitea Sweden, USHL, NAHL, SHL, Университет Коменского в Братиславе.</p>
+          </article>
+          <article class="team-card">
+            <h3 class="team-name">Александр Аксенов</h3>
+            <p class="team-role">ИТ-директор</p>
+            <p class="team-bio">Выпускник юридического факультета Тартуского университета, 30 лет в веб-инфраструктуре.</p>
+          </article>
+        </div>
+
+        <div class="accred-bar">
+          <span class="accred-label">Официальные аккредитации:</span>
+          <span class="accred-item">Czech Ice Hockey Association</span>
+          <span class="accred-item">Ministry of Sports of Slovakia</span>
+          <span class="accred-item">Swedish Ice Hockey Federation</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="section-wp">
+      <div class="container">
+        <div class="wp-arch-panel" id="wpSpecBox">
+          <div class="section-head">
+            <h2 class="section-title">Архитектура объединенного портала на WordPress 6.7</h2>
+            <p class="section-sub">Техническая концепция миграции europa-stars.eu и academy.europa-stars.eu на единую защищенную платформу без конструкторов страниц.</p>
+          </div>
+
+          <div class="wp-tabs" role="tablist" aria-label="Разделы архитектуры WordPress">
+            <button type="button" class="wp-tab is-active" data-wp="structure" role="tab" aria-selected="true">Единая структура и меню</button>
+            <button type="button" class="wp-tab" data-wp="security" role="tab" aria-selected="false">Защита от взлома и изоляция</button>
+            <button type="button" class="wp-tab" data-wp="seo" role="tab" aria-selected="false">Миграция URL и мультиязычность RU/EN/SK</button>
+          </div>
+
+          <div class="wp-tab-content" id="wpTabContent">
+            <p>Чистая кастомная тема WordPress 6.7 без Elementor и тяжелых конструкторов. Единая навигация объединяет разделы агентства, академии в Братиславе, школы UNHS и платформы Boost Hockey с быстрым доступом к анкете игрока.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-company">Europa Stars Group s.r.o.</span>
+        <span class="footer-location">Bratislava, Slovakia</span>
+      </div>
+      <div class="footer-contacts">
+        <a href="mailto:info@europa-stars.com" class="footer-link">info@europa-stars.com</a>
+        <a href="tel:+421917473740" class="footer-link tabular-nums">+421 917 473 740</a>
+        <a href="tel:+421919177634" class="footer-link tabular-nums">+421 919 177 634</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="applyModal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modalTitle" data-i18n="modal_title">Анкета игрока и запись в Академию</h3>
+        <button type="button" class="modal-close" id="closeModalBtn" aria-label="Закрыть">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <form id="playerApplyForm" novalidate>
+        <div class="form-grid">
+          <label class="form-field">
+            <span>Имя и фамилия игрока</span>
+            <input type="text" id="inputName" required placeholder="Например: Иван Петров">
+          </label>
+          <label class="form-field">
+            <span>Год рождения</span>
+            <input type="number" id="inputBirthYear" min="1995" max="2018" required placeholder="2008">
+          </label>
+          <label class="form-field">
+            <span>Направление</span>
+            <select id="selectDirection">
+              <option value="agency">Агентство (контракт / просмотр)</option>
+              <option value="academy">Академия в Братиславе</option>
+              <option value="boost">Онлайн-тренировки Boost Hockey</option>
+            </select>
+          </label>
+          <label class="form-field">
+            <span>Амплуа</span>
+            <select id="selectPosition">
+              <option value="forward">Нападающий</option>
+              <option value="defense">Защитник</option>
+              <option value="goalie">Вратарь</option>
+              <option value="football">Футбол (Академия)</option>
+            </select>
+          </label>
+          <label class="form-field">
+            <span>Целевая лига или программа</span>
+            <input type="text" id="inputLeagueTarget" placeholder="Например: USHL, Extraliga, U18">
+          </label>
+          <label class="form-field">
+            <span>Ссылка на EliteProspects или видео</span>
+            <input type="url" id="inputProfileUrl" placeholder="https://www.eliteprospects.com/...">
+          </label>
+          <label class="form-field form-field-full">
+            <span>Контакт для связи (Email, WhatsApp или Telegram)</span>
+            <input type="text" id="inputContact" required placeholder="+421 ... или @username">
+          </label>
+        </div>
+
+        <div class="form-error" id="formErrorBox" hidden></div>
+        <button type="submit" class="btn-primary btn-full" id="submitApplyBtn">Отправить анкету в Братиславу</button>
+      </form>
+
+      <div class="form-success" id="formSuccessBox" hidden>
+        <p id="successSummaryText"></p>
+        <button type="button" class="btn-secondary" id="newApplyBtn">Заполнить еще одну анкету</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
